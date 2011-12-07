@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009">
+	<fx:Metadata>[HostComponent("spark.components.ToggleButton")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+		<s:State name="upAndSelected"/>
+		<s:State name="overAndSelected"/>
+		<s:State name="downAndSelected"/>
+		<s:State name="disabledAndSelected"/>
+	</s:states>
+	<s:Ellipse height="52" id="ellipse1" width="52" x="0" y="0">
+		<s:fill>
+			<s:SolidColor alpha="0.5" color="#ADD5F7" color.over="#7FB2F0" color.down="#4E7AC7" color.disabled="#CCCCCC" color.overAndSelected="#7FB2F0" color.downAndSelected="#4E7AC7" color.disabledAndSelected="#CCCCCC"/>
+		</s:fill>
+	</s:Ellipse>
+	<s:BitmapImage blendMode="overlay" height="29" id="bitmapimage1" smooth="true" source="@Embed('/assets/images/Media-Player.png')" width="29" x="12" y="12" visible.up="false" visible.down="false" visible.disabled="false" visible.over="false"/>
+	<s:Line blendMode="overlay" id="line2" includeIn="disabled,down,downAndSelected,over,overAndSelected,up,upAndSelected" x="29" y="19" yTo="13" visible.upAndSelected="false" visible.downAndSelected="false" visible.overAndSelected="false">
+		<s:stroke>
+			<s:LinearGradientStroke caps="none" joints="miter" miterLimit="4" rotation="17.526" weight="4">
+				<s:GradientEntry alpha="1.0" color="#DDD9D9" ratio="0.027450980392156862"/>
+				<s:GradientEntry alpha="1.0" color="#999999" ratio="1"/>
+			</s:LinearGradientStroke>
+		</s:stroke>
+		<s:filters>
+			<s:DropShadowFilter alpha="0.5" angle="45.0" blurX="2" blurY="2" color="0x000000" distance="4.0" hideObject="false" inner="false" knockout="false" quality="2" strength="1"/>
+		</s:filters>
+	</s:Line>
+	<s:Line blendMode="overlay" id="line0" includeIn="disabled,down,downAndSelected,over,overAndSelected,up,upAndSelected" x="22" y="19" yTo="13" visible.upAndSelected="false" visible.downAndSelected="false" visible.overAndSelected="false">
+		<s:stroke>
+			<s:LinearGradientStroke caps="none" joints="miter" miterLimit="4" rotation="17.526" weight="4">
+				<s:GradientEntry alpha="1.0" color="#DDD9D9" ratio="0.027450980392156862"/>
+				<s:GradientEntry alpha="1.0" color="#999999" ratio="1"/>
+			</s:LinearGradientStroke>
+		</s:stroke>
+		<s:filters>
+			<s:DropShadowFilter alpha="0.5" angle="45.0" blurX="2" blurY="2" color="0x000000" distance="4.0" hideObject="false" inner="false" knockout="false" quality="2" strength="1"/>
+		</s:filters>
+	</s:Line>
+</s:Skin>

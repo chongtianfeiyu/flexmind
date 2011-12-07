@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	width="100%" height="100%">	
+	<s:states>
+		<s:State name="Start"/>
+		<s:State name="Success"/>
+	</s:states>
+	<fx:Declarations>
+		<s:RemoteObject id="authService"
+						endpoint="http://www.i1973.com/server/gateway.php"
+						destination="amfphp" source="auth"
+						showBusyCursor="true"/>
+			
+		<mx:EmailValidator id="emailValid" source="{txtEmail}" property="text" 
+						   trigger="{btnSend}" triggerEvent="click"
+						    />		
+		
+		<mx:StringValidator id="nameValid" source="{txtName}" property="text" 
+							
+							tooShortError="This string is shorter than the minimum allowed length of 4. " 
+							tooLongError="This string is longer than the maximum allowed length of 2000." 
+							minLength="1" maxLength="2000"
+							trigger="{btnSend}" triggerEvent="click" />		
+	</fx:Declarations>
+	<s:VGroup width="100%" height="100%" horizontalAlign="center" paddingBottom="18" paddingLeft="8"
+			  paddingRight="8" paddingTop="8" verticalAlign="middle">
+	
+		<mx:Form includeIn="Start" width="100%">
+			<mx:FormItem  labelStyleName="message" label="Name:" toolTip="or your nickname:)" width="100%">
+				<s:TextInput  id="txtName"  width="200" />
+			</mx:FormItem>
+			<mx:FormItem width="100%" label="Email:" labelStyleName="message" paddingTop="15">					
+				<s:TextInput id="txtEmail" width="200" />
+			</mx:FormItem>											
+		</mx:Form>
+		<s:HGroup includeIn="Start" width="100%" height="100%" paddingBottom="10" paddingLeft="15"
+				  paddingRight="15" verticalAlign="middle">	
+			<s:Label styleName="message"  text="Content:" />
+			<s:VGroup width="100%" height="100%" gap="15">
+				
+				<s:TextArea id="txtContent" styleName="feelbackArea" width="100%" height="100%"/>
+				<s:Button id="btnSend"  enabled="false" width="115"
+				skinClass="assets.skins.SendButtonSkin"/>
+			
+			</s:VGroup>					
+		</s:HGroup>
+		<s:HGroup includeIn="Success" itemCreationPolicy="immediate" width="80%"  horizontalAlign="center" verticalAlign="middle">
+			<mx:Image includeIn="Success" source="assets/icon/happy.png"/>
+			<s:Label includeIn="Success" text="Thank you: " styleName="feelbackArea"/>
+			<s:Label id="lblName" includeIn="Success" text="Name" styleName="feelbackArea"/>
+		</s:HGroup>
+	</s:VGroup>
+</s:Group>

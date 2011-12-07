@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark">
+	
+	<fx:Metadata>
+		[HostComponent("spark.components.HSlider")]
+	</fx:Metadata> 
+	
+	<s:states>
+		<s:State name="normal" />
+		<s:State name="disabled" />
+	</s:states>
+	
+	<s:Button id="track" skinClass="assets.skins.plugins.music.SlideTrack" alpha.disabled="0.5" x="1" y.normal="3" y.disabled="2"/>
+	<s:Button id="thumb" skinClass="assets.skins.plugins.music.SlideThumb" alpha.disabled="0.5" x="0" y="0"/>
+	<s:transitions>
+		<s:Transition fromState="normal" toState="disabled" autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{track}">
+					<s:Fade duration="0"/>
+					<s:Move duration="0" autoCenterTransform="true"/>
+				</s:Parallel>
+				<s:Parallel target="{thumb}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+	
+</s:Skin>

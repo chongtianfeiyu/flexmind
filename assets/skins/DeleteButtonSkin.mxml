@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:d="http://ns.adobe.com/fxg/2008/dt">
+	<fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect height="27" id="rect1" width="37" x="1" y="1" alpha="0.01" alpha.over="1">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#FFFFFF" joints="miter" miterLimit="4" weight="2"/>
+		</s:stroke>
+		<s:fill.down>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.down>
+		<s:fill.disabled>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.disabled>
+		<s:fill.up>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.up>
+	</s:Rect>
+	<s:BitmapImage blendMode.disabled="luminosity" blendMode.down="luminosity" blendMode.up="luminosity" height="11" id="bitmapimage1" smooth="true" source="@Embed('/assets/images/delete.png')" d:userLabel="Delete" width="11" x="9" x.over="14" x.up="14" y="8" y.over="7.95"></s:BitmapImage>
+	<s:transitions>
+		<s:Transition autoReverse="true" fromState="up" toState="over">
+			<s:Parallel>
+				<s:Parallel target="{rect1}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition autoReverse="true" fromState="over" toState="up">
+			<s:Parallel>
+				<s:Parallel target="{rect1}">
+					<s:Fade duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+</s:Skin>

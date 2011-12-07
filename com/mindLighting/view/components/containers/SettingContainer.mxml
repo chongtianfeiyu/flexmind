@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	width="100%" height="100%">
+	<s:HGroup width="100%" height="100%" gap="0">
+		
+		<!--~~~~~~~~~~~~~~~~~ left ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<mx:Accordion id="accordion"   width="180" height="100%">
+			<!-- Define each panel using a VBox container. -->
+			<s:NavigatorContent id="accNormal" label="Settings"   width="100%" height="100%">
+				<s:layout>
+					<s:VerticalLayout horizontalAlign="center" />
+				</s:layout>
+				<s:Button id="btnNormal" label="Normal Settings" width="100%" />				
+				<s:Button id="btnLog" label="Log Settings" width="100%"  />				
+			</s:NavigatorContent>
+			
+		</mx:Accordion>
+		<!--~~~~~~~~~~~~~~~~~ right ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+		<mx:ViewStack id="viewStack" creationPolicy="all"  borderVisible="false" width="100%" height="100%" >
+			
+			<s:NavigatorContent id="normal" label="Normal Setting"  width="100%" height="100%" fontWeight="bold" >
+				
+				<s:layout>
+					<s:VerticalLayout horizontalAlign="center"  
+						  paddingTop="5" paddingLeft="5" 
+						  paddingRight="5" paddingBottom="5" />
+				</s:layout>
+				
+				<mx:Form>
+					<mx:FormItem labelStyleName="message" label="Start automatically on PC logon:" >
+						<s:ToggleButton id="btnAutoStart"  />
+					</mx:FormItem>
+					
+					<mx:FormItem labelStyleName="message"  label="Rondom launch page:" >
+						<s:ToggleButton id="btnRandomSection" />
+					</mx:FormItem>
+				</mx:Form>
+			</s:NavigatorContent>
+			
+			<s:NavigatorContent id="log" label="Log Setting"
+								width="100%" height="100%" fontWeight="bold" >
+				<s:layout>
+					<s:VerticalLayout horizontalAlign="center"  
+						  paddingTop="5" paddingLeft="5" 
+						  paddingRight="5" paddingBottom="5" />
+				</s:layout>
+				<mx:Form>
+					<mx:FormItem labelStyleName="message" label="Show Days LOG:" >
+						<s:ToggleButton id="btnLogDay"  />
+					</mx:FormItem>
+					<mx:FormItem labelStyleName="message" label="Show Weekend LOG:" >
+						<s:ToggleButton id="btnLogWeekend"  />
+					</mx:FormItem>
+					<mx:FormItem labelStyleName="message" label="Show Month LOG:" >
+						<s:ToggleButton id="btnLogMonth"  />
+					</mx:FormItem>
+					
+					<mx:FormItem labelStyleName="message"  label="Show Log Time:" >
+						<s:NumericStepper id="numHour" value="8" maximum="23"  minimum="0"/>
+						<s:NumericStepper id="numMinute" value="0" maximum="59"  minimum="0"/>
+					</mx:FormItem>
+				</mx:Form>
+			</s:NavigatorContent>
+		
+			
+		</mx:ViewStack>
+		
+	</s:HGroup>
+		<!--~~~~~~~~~~~~~~~~~ bottom ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<s:Group width="100%">	
+		<s:Button left="0" id="btnSave" skinClass="assets.skins.SaveButtonSkin" />
+	</s:Group>
+</s:VGroup>

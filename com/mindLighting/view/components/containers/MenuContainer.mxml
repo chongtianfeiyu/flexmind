@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009"
+	 xmlns:s="library://ns.adobe.com/flex/spark"
+	 width="100%" >
+	
+	<s:TileGroup rowAlign="justifyUsingHeight" columnAlign="justifyUsingWidth" horizontalAlign="center" 
+		horizontalCenter="0"  requestedColumnCount="4" y="70" width="100%" verticalGap="8" horizontalGap="8">
+		<s:Button id="btnQuickAdd" skinClass="assets.skins.HomeQuickAddButtonSkin" label="Quick add "/>
+		<s:Button id="btnGoal" skinClass="assets.skins.HomeGoalButtonSkin"  label="Goal"/>
+		<s:Button id="btnReader" skinClass="assets.skins.HomeReaderButtonSkin" label="Read"/>			
+		<s:Button id="btnWriter" skinClass="assets.skins.HomeMoreButtonSkin" label="Write"/>	
+		<s:Button id="btnManager" skinClass="assets.skins.HomeWordButtonSkin" label="Words"/>
+		<s:Button id="btnReport"  skinClass="assets.skins.HomeReportButtonSkin" label="Report" />			
+		<s:Button id="btnSettings" skinClass="assets.skins.HomeSettingButtonSkin" label="Settings"/>	
+		<s:Button id="btnFeelback" skinClass="assets.skins.HomeFeelbackSkin" label="Feedback"/>	
+		<!--<s:Button id="btnMore" skinClass="assets.skins.HomeMoreButtonSkin" label="More..."/>-->	
+		<!--  more ... -->
+	</s:TileGroup>
+	
+</s:Group>

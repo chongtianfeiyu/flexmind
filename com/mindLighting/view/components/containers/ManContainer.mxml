@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	width="100%" height="100%">
+	
+	<s:states>
+		<s:State name="Search" />
+		<s:State name="Modify" />
+		<s:State name="Add" />
+	</s:states>
+		<s:HGroup width="100%" height="62"  verticalAlign="top" paddingRight="10" paddingLeft="10" paddingTop="10">
+			<s:BorderContainer width="100%" styleName="searchBorder" height="30" >
+				<s:Group id="titleBar" width="100%">
+					<s:TextInput maxChars="65" id="txtTitle" styleName="SearhInput" includeIn="Add,Search" 
+						x="3" y="6" width="100%" text="Search..."/>
+					<s:TextInput maxChars="65" id="txtModify" styleName="SearhInput" includeIn="Modify"  x="3" y="6" width="100%" />
+					<s:Button id="btnYes"  visible="false" right="0" skinClass="assets.skins.YesSmallButtonSkin" />
+					<s:Button id="btnNo"  visible = "false"  right="0" skinClass="assets.skins.NoSmallButtonSkin" />
+					<s:Button id="btnOther"  visible="false" right="0" skinClass="assets.skins.OtherSmallButtonSkin" />
+				</s:Group>
+			</s:BorderContainer>
+			<s:Button id="btnAdd" includeIn="Add,Search" label="Add"
+					  skinClass="assets.skins.AddButtonSkin" toolTip="Add it"
+					  enabled.Add="true"
+					  enabled.Search="false"/>
+			<s:Button id="btnSave" includeIn="Modify" label="Save"
+					  skinClass="assets.skins.SaveButtonSkin"/>
+		</s:HGroup>
+		<s:Line width="100%">
+			<s:stroke>
+				<s:SolidColorStroke caps="none"  miterLimit="1" color="#CCCCCC"  weight="1"/>
+			</s:stroke>
+		</s:Line>
+		
+	<s:List id="lsWord" width="100%" height="100%" 
+			skinClass="com.mindLighting.view.components.items.WordRender" >
+	</s:List>
+</s:VGroup>
+

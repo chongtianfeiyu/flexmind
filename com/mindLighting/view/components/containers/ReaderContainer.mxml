@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx"
+	gap="18" paddingLeft="8" paddingRight="8" paddingTop="8" paddingBottom="8"
+	width="100%" height="100%">
+
+	<s:states>
+		<s:State name="Start"/>
+		<s:State name="Progress"/>
+	</s:states>
+			
+	<s:VGroup id="titleGroup"  width="100%" height="100%" verticalAlign="middle" horizontalAlign="center">
+		<mx:Label includeIn="Start" styleName="message" text="Try to drop text here"/>
+		<mx:HTML id="html" includeIn="Progress" itemCreationPolicy="immediate" width="100%" height="100%"/>
+	</s:VGroup>
+			
+	<s:Group id="controlGroup" width="100%">		
+		<!--<s:Button visible="false" left="0" width="100" height="54" label="Timer"/>-->		
+		<s:Button id="btnFormat" left="0" enabled="false" skinClass="assets.skins.ColorButtonSkin"
+				  y.Progress="7" left.Progress="0"/>
+		
+		<s:HGroup includeIn="Progress" itemCreationPolicy="immediate" x="135" y="15" width="100%" horizontalAlign="left">
+			<s:Label id="lblPersentNumber" styleName="reportMessage"/>
+			<s:Label id="lblToalNumber"  styleName="reportMessage" />
+			<s:Label id="lblUnmindNumber" styleName="reportMessage" />
+		</s:HGroup>
+
+		<s:Button id="btnLight" itemCreationPolicy="immediate" includeIn="Progress" right="0"
+				  skinClass="assets.skins.LightButtonSkin"/>
+	</s:Group>
+</s:VGroup>

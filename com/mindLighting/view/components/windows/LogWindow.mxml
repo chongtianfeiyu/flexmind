@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Window xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	 xmlns:s="library://ns.adobe.com/flex/spark" 
+	 xmlns:mx="library://ns.adobe.com/flex/mx" width="400" height="300"
+	 creationComplete="init(event)">
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayList;
+			import mx.events.FlexEvent;
+			
+			
+			[Binable]
+			protected var _data:ArrayList;
+			
+			public function get logs():ArrayList
+			{
+				return _data;
+			}
+
+			public function set logs(value:ArrayList):void
+			{
+				_data = value;
+			}
+
+			protected function init(event:FlexEvent):void
+			{
+				var areaBounds:Rectangle = Screen.mainScreen.bounds;
+				nativeWindow.x = areaBounds.width - width - 10;
+				nativeWindow.y = areaBounds.height - height - 30;
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:List id="lsLogs" dataProvider="{_data}" skinClass="com.mindLighting.view.components.items.LogItemSkin" />
+	
+	
+</s:Window>

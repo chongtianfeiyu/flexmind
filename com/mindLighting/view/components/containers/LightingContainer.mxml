@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+	horizontalAlign="center" verticalAlign="middle" paddingBottom="10" >
+	<s:Group id="section" width="500" height="100%">
+		
+		<s:Label id="lblCurrentTitle" color="#096098" fontFamily="Arial" fontSize="15"
+				 fontWeight="bold" horizontalCenter="0" text="HelloWord" verticalCenter="-53"/>
+		<s:Button id="btnYes" y="117" left="64" skinClass="assets.skins.YesButtonSkin"/>
+		<s:Button id="btnNo" y="117" right="55" skinClass="assets.skins.NoButtonSkin"/>
+		<s:Button id="btnOther" x="224" y="256" width="32" height="34"
+				  skinClass="assets.skins.OtherButtonSkin"/>
+	</s:Group>
+	<s:HGroup width="386" horizontalAlign="left">
+		<s:Label id="newTitlesLength" />
+		<s:Label text="/" />	
+		<s:Label id="lblCurrentLength" />
+		<s:Label id="lblProvousTitle" color="#D6D8DA" fontSize="12" fontWeight="bold" text="HelloWord"/>
+	</s:HGroup>
+</s:VGroup>

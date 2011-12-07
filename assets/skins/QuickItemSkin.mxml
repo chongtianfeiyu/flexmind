@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" 
+		xmlns:mx="library://ns.adobe.com/flex/mx">
+	<!-- host component -->
+	<fx:Metadata>
+		[HostComponent("spark.components.Button")]
+	</fx:Metadata>
+	
+	<!-- states -->
+	<s:states>
+		<s:State name="disabled" />
+		<s:State name="down" />
+		<s:State name="over" />
+		<s:State name="up" />
+	</s:states>
+
+	<!-- SkinParts
+	name=labelDisplay, type=spark.core.IDisplayText, required=false
+	name=iconDisplay, type=spark.primitives.BitmapImage, required=false
+	-->
+	<s:Rect  left="0" right="0" top="0" bottom="0" > 
+<s:stroke>
+			<s:SolidColorStroke weight.over="1" color="#FFFFFF"/>
+		</s:stroke>
+		<s:filters>
+			<s:GlowFilter blurX="1" blurY="1" 
+						  
+						  color="0x5380d0" inner="false" knockout="false" quality="2" strength="2" 
+						  
+						  includeIn="up,down"/>
+		</s:filters>
+		<s:fill.down>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.down>
+		<s:fill.disabled>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.disabled>
+		<s:fill.up>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.up>
+		<s:fill.over>
+			<s:SolidColor color="#35478C"/>
+		</s:fill.over>
+	</s:Rect>
+	<!-- layer 8: text -->
+	<!--- @copy spark.components.supportClasses.ButtonBase#labelDisplay -->
+	<s:Label id="labelDisplay"
+			 textAlign="center"
+			 verticalAlign="middle" width="59"
+			 maxDisplayedLines="1"  color.over="#FFFFFF" color.up="#4E7AC7"
+			 horizontalCenter="0" verticalCenter="1"
+			 left="10" right="10" top="2" bottom="2">
+	</s:Label>
+</s:Skin>

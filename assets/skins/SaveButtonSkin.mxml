@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" 
+		
+		xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		
+		xmlns:d="http://ns.adobe.com/fxg/2008/dt">
+	<fx:Metadata>[HostComponent("spark.components.Button")]
+		
+	</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:Rect alpha="1" height="28" id="rect2" radiusX="3" width="120" 
+			
+			y="0.5" x="0.5">
+		<s:stroke>
+			<s:SolidColorStroke caps="none" color="#999999" 
+								
+								joints="miter" miterLimit="4" weight="1" color.over="#FFFFFF"/>
+		</s:stroke>
+		<s:filters>
+			<s:GlowFilter alpha="1.0" blurX="3" blurY="3" 
+						  
+						  color="0x5380d0" inner="false" knockout="false" quality="2" strength="2" 
+						  
+						  includeIn="up,down"/>
+		</s:filters>
+		<s:fill.down>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.down>
+		<s:fill.disabled>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.disabled>
+		<s:fill.up>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.up>
+		<s:fill.over>
+			<s:SolidColor color="#ADD5F7"/>
+		</s:fill.over>
+	</s:Rect>
+	<s:BitmapImage height="28" smooth="true" source="@Embed('assets/images/save.png')" width="28" y="1" 
+				   
+				   blendMode.disabled="luminosity" x="45"/>
+</s:Skin>

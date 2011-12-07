@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:s="library://ns.adobe.com/flex/spark" 
+	xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%" >
+	<s:TextInput id="txtType" text="tag here"/>
+	<s:TextArea id="txtALag" width="100%" height="65" text="log here:)"/>
+
+	<s:HGroup width="100%"  horizontalAlign="right">
+		<s:Label id="lblCount" text="0/255"/>
+	</s:HGroup>
+	
+	<s:HGroup width="100%" horizontalCenter="0" >			
+		<s:CheckBox id="cbShare" selected="true" label="同时转播到我的腾讯微博"/>
+		<s:Button id="btnAdd" enabled="{txtALag.text.length > 4}" label="Add"/>
+	</s:HGroup>
+	<s:List id="lsLogs" skinClass="com.mindLighting.view.components.items.LogItemSkin" />
+</s:VGroup>

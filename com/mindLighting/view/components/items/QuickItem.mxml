@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Button  label="{title}"  fontSize="14" fontWeight="bold" color="#4E7AC7"
+		   lineHeight="120%"  focusOut="button1_focusOutHandler(event)" 
+		   focusIn="button1_focusInHandler(event)"  
+		  skinClass="assets.skins.QuickItemSkin" 
+		xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		width="119" height="59">		
+	<fx:Script>
+		<![CDATA[
+			[Bindable]
+			public var title:String;
+			public var data:String;
+
+			protected function button1_focusInHandler(event:FocusEvent):void
+			{
+				trace( title + ' focus in.');
+				this.skin.currentState = 'over';
+			}
+
+
+			protected function button1_focusOutHandler(event:FocusEvent):void
+			{
+				this.skin.currentState = 'up';
+			}
+
+		]]>
+	</fx:Script>
+</s:Button>
+

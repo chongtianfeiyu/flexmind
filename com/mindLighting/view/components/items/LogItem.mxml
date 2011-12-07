@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ItemRenderer 
+	xmlns:s="library://ns.adobe.com/flex/spark"
+	xmlns:fx="http://ns.adobe.com/mxml/2009" 
+	xmlns:d="http://ns.adobe.com/fxg/2008/dt"
+	autoDrawBackground="false"
+	xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Script>
+		<![CDATA[	
+			import assets.skins.NoSmallButtonSkin;
+			
+			import com.mindLighting.model.vo.WordType;
+			override public function set data(value:Object):void {
+				super.data = value;
+				
+				if (data == null) // a renderer's data is set to null when it goes out of view
+					return;
+				
+			}
+		]]>
+	</fx:Script>
+	<fx:Declarations>
+		<mx:DateFormatter id="dateFormatter" formatString="MM-DD" />
+	</fx:Declarations>
+	<s:states>
+		<s:State name="normal"/>
+		<s:State name="hovered"/>
+		<s:State name="selected"/>
+	</s:states>
+	
+	<!-- Rectangle ~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<s:Rect height="30" id="rect2" d:userLabel="Rectangle" width="484" x="0" y="0">
+		<s:fill>
+			<s:SolidColor color="#FFFFFF"  color.hovered="#ADD500" color.selected="#ADD5F7"/>
+		</s:fill>
+		<!-- <s:stroke>
+		<s:SolidColorStroke caps="none" color="#CCCCCC"  weight="1"/>
+		</s:stroke>-->
+	</s:Rect>
+	
+	<!-- Line ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<s:Line width="484" x="0" y="30">
+		<s:stroke>
+			<s:SolidColorStroke caps="none"  miterLimit="1" color="#CCCCCC"  weight="1"/>
+		</s:stroke>
+	</s:Line>
+	
+	<!-- delete button~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<s:Button id="btnDelete"   label="{this.itemIndex.toString()}"
+			  
+			  
+			  skinClass="assets.skins.ColseButtonSkin" 
+			  
+			  d:userLabel="DeleteBtn" visible.normal="false" x="371" y="7" />
+	
+	<!-- Date Text~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->		  
+	<s:RichText id="rtxtDate" color="#999999" fontFamily="Comic Sans MS" fontSize="11" lineThrough="false" tabStops="S0" text="{data.uDate}" d:userLabel="Date" x="406" y="11">
+		<s:filters>
+			<s:GlowFilter alpha="1.0" blurX="6.0" blurY="6.0" color="#FFFFFF" inner="false" knockout="false" quality="2" strength="1"/>
+		</s:filters>
+	</s:RichText>
+	
+	<!-- Title Text~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<s:RichText  color="#4E7AC7" fontFamily="Arial" fontSize="14" 
+				 fontWeight="bold" id="richtext1" text="{data.title}" 
+				 d:userLabel="Title" lineHeight="120%"
+				 tabStops="S0 S50" trackingRight="1" width="250"
+				 y="10" x="109" color.hovered="#FFFFFF" 
+				 tabStops.hovered="S0 S50" color.selected="#FFFFFF"
+				 tabStops.selected="S0 S50"/>
+	
+	<!-- Edit~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~--> 
+	<s:Button id="btnEdit" visible.normal="false"   label="{this.itemIndex.toString()}"
+			  
+			  skinClass="assets.skins.EditButtonSkin" x="0" y="1"/>
+	
+	
+	<s:transitions>
+		<s:Transition autoReverse="true" fromState="normal" toState="YesState">
+			<s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Move autoCenterTransform="true" duration="250"/>
+					<s:Fade alphaTo="0" duration="250" d:noAutoDelete="true"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition autoReverse="true" fromState="normal" toState="NoState">
+			<s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Move autoCenterTransform="true" duration="250"/>
+					<s:Fade alphaTo="0" duration="250" d:noAutoDelete="true" startDelay="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition autoReverse="true" fromState="normal" toState="RecycleState">
+			<s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Move autoCenterTransform="true" duration="250"/>
+					<s:Fade alphaTo="0" duration="250" d:noAutoDelete="true"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition autoReverse="true" fromState="RecycleState" toState="normal">
+			<s:Parallel>
+				<s:Parallel target="{richtext1}">
+					<s:Move autoCenterTransform="true" duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+</s:ItemRenderer>

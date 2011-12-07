@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:WindowedApplication xmlns:containers="com.mindLighting.view.components.containers.*"
+	xmlns:mindLighting="com.mindLighting.*"
+	xmlns:bases="com.mindLighting.view.bases.*"
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+   	xmlns:s="library://ns.adobe.com/flex/spark"
+   	xmlns:mx="library://ns.adobe.com/flex/mx"
+	backgroundAlpha="0.0"
+   	showStatusBar="false"
+	includeInLayout="false">
+	<fx:Declarations>
+		<mindLighting:MainContext contextView="{this}" />
+	</fx:Declarations>
+	<fx:Style source="assets/style/app.css"/>
+	<s:layout> <s:VerticalLayout /> </s:layout>
+	
+	<s:states>
+		<s:State name="Menu" />
+		<s:State name="Quick" />
+		<s:State name="Goal" />
+		<s:State name="Read" />
+		<s:State name="Write" />
+		<s:State name="Man" />
+		<s:State name="Report" />
+		<s:State name="Setting" />
+		<s:State name="Feedback" />
+		<s:State name="Light" />
+		<s:State name="Load" />
+	</s:states>
+	
+	<bases:MainContainerBase>
+		<bases:SubContainerBase>
+			<containers:MenuContainer includeIn="Menu" />
+			<containers:GoalContainer includeIn="Goal" />
+			<containers:QuickContainer includeIn="Quick" />
+			<containers:SettingContainer includeIn="Setting" />
+			<containers:ReportContainer includeIn="Report" />
+			<containers:FeedbackContainer includeIn="Feedback" />
+			<containers:ManContainer includeIn="Man" />
+			<containers:LightingContainer includeIn="Light" />
+			<containers:ReaderContainer includeIn="Read" />
+			<containers:LoaderContainer includeIn="Load" />
+		</bases:SubContainerBase>
+	</bases:MainContainerBase>
+</s:WindowedApplication>

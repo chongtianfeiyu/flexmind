@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:s="library://ns.adobe.com/flex/spark" xmlns:fx="http://ns.adobe.com/mxml/2009">
+	<fx:Metadata>[HostComponent("spark.components.Button")]</fx:Metadata>
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	<s:BitmapImage height="15" id="bitmapimage1" smooth="true" source="@Embed('/assets/images/edit.png')" width="15" x="11" y="7">
+	</s:BitmapImage>
+	<s:Rect alpha="0.01" alpha.over="0.1" alpha.up="0.01" height="27" id="rect1" width="37" x="1" x.over="2" x.up="0.5" y="1" y.over="2" y.up="0.5" alpha.down="0.12">
+		<s:fill.down>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.down>
+		<s:fill.disabled>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.disabled>
+		<s:fill.up>
+			<s:SolidColor color="#002FD1"/>
+		</s:fill.up>
+		<s:stroke.over>
+			<s:SolidColorStroke caps="none" color="#FFFFFF" joints="miter" miterLimit="4" weight="2"/>
+		</s:stroke.over>
+		<s:stroke.down>
+			<s:SolidColorStroke caps="none" color="#FFFFFF" joints="miter" miterLimit="4" weight="2"/>
+		</s:stroke.down>
+		<s:stroke.disabled>
+			<s:SolidColorStroke caps="none" color="#FFFFFF" joints="miter" miterLimit="4" weight="2"/>
+		</s:stroke.disabled>
+		<s:stroke.up>
+			<s:SolidColorStroke caps="none" color="#FFFFFF" joints="miter" miterLimit="4" weight="1"/>
+		</s:stroke.up>
+		<s:fill.over>
+			<s:SolidColor color="#FFFFFF"/>
+		</s:fill.over>
+	</s:Rect>
+	<s:transitions>
+		<s:Transition autoReverse="true" fromState="up" toState="over">
+			<s:Parallel>
+				<s:Parallel target="{rect1}">
+					<s:Fade duration="0"/>
+					<s:Move autoCenterTransform="true" duration="0"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+		<s:Transition fromState="over" toState="up" autoReverse="true">
+			<s:Parallel>
+				<s:Parallel target="{rect1}">
+					<s:Fade duration="0"/>
+					<s:Move duration="0" autoCenterTransform="true"/>
+				</s:Parallel>
+			</s:Parallel>
+		</s:Transition>
+	</s:transitions>
+</s:Skin>

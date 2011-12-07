@@ -1,0 +1,141 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+mx|Button {
+   paddingLeft: 0;
+   paddingRight: 0;
+   paddingTop: 0;
+   paddingBottom: 0;
+   color: #ffffff;
+   textRollOverColor: #ffffff;
+   textSelectedColor: #ffffff;
+   fontFamily: Verdana;
+   fontSize: 9;
+}
+
+
+.SearhInput
+{
+	color: #4E7AC7;
+	fontFamily: Arial;
+	fontSize: 14;
+	fontWeight: bold;
+	lineHeight: "120%";
+	skinClass: ClassReference("assets.skins.TextInputTitleSkin");
+}
+s|TextInput
+{
+	color: #4E7AC7;
+	fontFamily: Arial;
+	fontSize: 14;
+	fontWeight: bold;
+	lineHeight: "120%";
+}
+s|Label
+{
+	color: #4E7AC7;
+	fontFamily: Arial;
+	fontSize: 14;
+	lineHeight: "120%";
+}
+
+.message
+{
+	color: #35478C;
+	fontFamily: Arial,Georgia,Times New-Roman;
+	fontSize: 11;
+	fontWeight: bold;
+}
+.reportMessage
+{
+	color: #000000;
+	fontFamily: Arial,Georgia,Times New-Roman;
+	fontSize: 11;
+	fontWeight: bold;
+}
+
+.mind
+{
+	color: green;
+	fontFamily: Arial,Georgia,Times New-Roman;
+	fontSize: 11;
+	fontWeight: bold;
+}
+.feelbackArea
+{
+	fontWeight: bold;
+	color: #35478C;
+	fontFamily: Arial;
+	fontSize: 14;
+}
+
+
+
+.readerStyle , .note
+{
+	color: #000000;
+	fontFamily: Georgia,Times New-Roman,serif;
+	fontSize: 14;
+	lineHeight: "120%";
+}
+.searchBorder
+{
+	borderColor: #CCCCCC;
+	borderWeight: 1;
+	cornerRadius: 3;
+}
+.MainBorderContainer
+{
+	backgroundColor: #b5e3fa;
+	cornerRadius: 3;
+	dropShadowVisible: true;
+}
+.SubBorderContainer
+{
+	backgroundColor: #FFFFFF;
+	borderColor: #CCCCCC;
+	cornerRadius: 3;
+	borderWeight: 1;
+}
+
+mx|ToolTip
+{
+	backgroundColor: #FFFFFF;
+	color: #16193B;
+	fontFamily: Georgia,Times New-Roman,serif;
+	fontSize: 14;
+}
+
+
+/** Report Section **/
+.wordLabel
+{
+	color: #16193B;
+	fontFamily: Georgia,Times New-Roman,serif;
+	fontSize: 14;
+	fontWeight: bold;
+}
+.reportToggleBar
+{
+	color:#FFFFFF;
+	disabledColor:#16193B;
+	fontFamily: Georgia,Times New-Roman,serif;
+	fontSize: 14;
+	fontWeight: bold;
+}
+mx|ProgressBar
+{
+	chromeColor: #ADD5F7;
+	borderWeight: 0;
+	
+}
+/**
+mx|TextArea
+{
+	color: #16193B;
+	fontFamily: Georgia,Times New-Roman,serif;
+	fontSize: 14;
+	textAlign:center;
+	lineHeight:20;
+}*/
